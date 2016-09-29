@@ -18,13 +18,24 @@ public class Store {
 		System.out.println("2-Afficher la liste des vehicules");
 		System.out.println("3-Modifier un vehicule");
 		System.out.println("4-Supprimer un vehicule");
-		int choice = Integer.parseInt(console.readLine("Entrer une valeur pour n : "));
+		int choice = Integer.parseInt(console.readLine("Entrer un chiffre du menu : "));
 
 		switch (choice) {
 		case 1:
-
+		
+			int annee = Integer.parseInt(console.readLine("Entrer lage de la voiture : "));
+			String modele = console.readLine("Le modele de la voiture : ");
+			String couleur = console.readLine("La couleur de la voiture : ");
+			Double prix = Double.parseDouble(console.readLine("Entrer lage de la voiture : "));
+			String marque = console.readLine("Entrer la marque de la voiture : ");
+			int vitesse = Integer.parseInt(console.readLine("Entrer la vitesse actuelle de la voiture : "));
+			
+			Car car3 = new Car(annee, modele,couleur, prix,marque, vitesse);
+			
 			break;
-		case 2:
+		case 2: {
+
+		}
 			System.out.println(tab);
 			break;
 		case 3:
