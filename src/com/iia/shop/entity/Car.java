@@ -1,14 +1,28 @@
 package com.iia.shop.entity;
 
-public class Car {
+import java.io.Serializable;
 
-	private int Year;
+public class Vehicule implements Serializable{
+	private String marque;
+	private int year;
+	private int speed;
 	private String model;
 	private String color;
-	private Double price;
-	private int speed;
+	private double price;
 
-	private String marque;
+	public Vehicule() {
+		super();
+	}
+
+	public Vehicule(String marque, int year, int speed, String model, String color, double price) {
+		super();
+		this.marque = marque;
+		this.year = year;
+		this.speed = speed;
+		this.model = model;
+		this.color = color;
+		this.price = price;
+	}
 
 	public String getMarque() {
 		return marque;
@@ -19,11 +33,19 @@ public class Car {
 	}
 
 	public int getYear() {
-		return Year;
+		return year;
 	}
 
 	public void setYear(int year) {
-		Year = year;
+		this.year = year;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
 	}
 
 	public String getModel() {
@@ -42,63 +64,25 @@ public class Car {
 		this.color = color;
 	}
 
-	public Double getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	public int getSpeed() {
-		return speed;
+	public void start() {
 	}
 
-	public void setSpeed(int speed) {
-		this.speed = speed;
+	public void stop() {
 	}
 
-	public Car(int year, String model, String color, Double price, String marque, int speed) {
-		super();
-		Year = year;
-		this.model = model;
-		this.color = color;
-		this.price = price;
-		this.marque = marque;
-		this.speed = speed;
-
+	public void speedUp(int speed) {
+		this.speed = this.speed + speed;
 	}
 
-	public static void Start() {
-		System.out.println("La voiture demarre");
+	public void speedDown(int speed) {
+		this.speed = this.speed - speed;
 	}
-
-	public static void Stop() {
-		System.out.println("La voiture est arrete");
-	}
-
-	public static int SpeedUp(int speed) {
-		if (speed < 180) {
-			speed = speed + 20;
-			System.out.println("La vitesse de la voiture augmente. Elle roule a " + speed + "km");
-		} else {
-			System.out.println("La voiture est deja a sa vitesse maximal");
-		}
-		return speed;
-
-	}
-
-	public static int SpeedDown(int speed) {
-		if (speed > 20) {
-
-			speed = speed - 20;
-			System.out.println("La vitesse de la voiture diminue. Elle roule a " + speed + "Km");
-
-		} else {
-			System.out.println("La voiture est deja a l arret");
-		}
-		return speed;
-		
-	}
-
 }
